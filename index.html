@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Laboratorio de Desarrollo de Aplicaciones en Red: ejercicios de JavaScript y AJAX.">
+  <title>Laboratorio 2 | JavaScript y AJAX</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container head-row">
+      <a class="brand" href="#inicio"><span class="brand-icon">&lt;/&gt;</span> LAB · 02</a>
+      <nav aria-label="Navegación principal">
+        <a href="#javascript">JavaScript</a>
+        <a href="#ajax">AJAX</a>
+        <a href="#guia">Instrucciones</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio" class="container">
+    <section class="intro">
+      <p class="overline">DESARROLLO DE APLICACIONES EN RED</p>
+      <h1>Laboratorio de <span>JavaScript y AJAX</span></h1>
+      <p>Una página sencilla para practicar cuatro ejercicios con JavaScript y consultar información de una dirección web mediante AJAX.</p>
+      <p><strong>Elaborado por: Sandra Carolina Gómez Neira</strong></p>
+      <div class="pill-row">
+  <span>Ejercicios JavaScript</span>
+  <span>Ejercicios AJAX</span>
+</div>
+    </section>
+
+    <section id="javascript" class="section-heading">
+      <div class="section-index">01</div>
+      <div><p class="overline">PRIMERA PARTE</p><h2>Ejercicios de JavaScript</h2><p>Escribe los datos de cada ejercicio y pulsa su botón para ver el resultado.</p></div>
+    </section>
+
+    <div class="exercise-grid">
+      <section class="exercise-card" aria-labelledby="titulo-palindromo">
+        <div class="card-top"><span class="card-number">EJERCICIO 1</span><span class="card-icon" aria-hidden="true">↔</span></div>
+        <h3 id="titulo-palindromo">Comprobar un palíndromo</h3>
+        <p>Compruebo si una palabra o frase se lee igual en los dos sentidos.</p>
+        <form id="form-palindromo">
+          <label for="texto-palindromo">Palabra o frase</label>
+          <input id="texto-palindromo" type="text" placeholder="Ej.: Anita lava la tina" required>
+          <button type="submit">Comprobar frase</button>
+        </form>
+        <output id="resultado-palindromo" class="result" aria-live="polite">El resultado aparecerá aquí.</output>
+      </section>
+
+      <section class="exercise-card" aria-labelledby="titulo-mayor">
+        <div class="card-top"><span class="card-number">EJERCICIO 2</span><span class="card-icon" aria-hidden="true">&gt;</span></div>
+        <h3 id="titulo-mayor">Comparar dos números</h3>
+        <p>Ingreso dos números y descubro cuál es mayor o si son iguales.</p>
+        <form id="form-mayor">
+          <div class="two-inputs">
+            <div><label for="numero-uno">Primer número</label><input id="numero-uno" type="number" step="any" placeholder="10" required></div>
+            <div><label for="numero-dos">Segundo número</label><input id="numero-dos" type="number" step="any" placeholder="20" required></div>
+          </div>
+          <button type="submit">Comparar números</button>
+        </form>
+        <output id="resultado-mayor" class="result" aria-live="polite">El resultado aparecerá aquí.</output>
+      </section>
+
+      <section class="exercise-card" aria-labelledby="titulo-encontrar">
+        <div class="card-top"><span class="card-number">EJERCICIO 3</span><span class="card-icon" aria-hidden="true">Aa</span></div>
+        <h3 id="titulo-encontrar">Encontrar las vocales</h3>
+        <p>Muestro las vocales presentes en una frase, en el mismo orden en que aparecen.</p>
+        <form id="form-encontrar">
+          <label for="frase-encontrar">Frase</label>
+          <input id="frase-encontrar" type="text" placeholder="Ej.: Hola mundo" required>
+          <button type="submit">Mostrar vocales</button>
+        </form>
+        <output id="resultado-encontrar" class="result" aria-live="polite">El resultado aparecerá aquí.</output>
+      </section>
+
+      <section class="exercise-card" aria-labelledby="titulo-contar">
+        <div class="card-top"><span class="card-number">EJERCICIO 4</span><span class="card-icon" aria-hidden="true">#</span></div>
+        <h3 id="titulo-contar">Contar las vocales</h3>
+        <p>Cuento cuántas veces aparece cada vocal, incluso si tiene tilde.</p>
+        <form id="form-contar">
+          <label for="frase-contar">Frase</label>
+          <input id="frase-contar" type="text" placeholder="Ej.: Educación" required>
+          <button type="submit">Contar vocales</button>
+        </form>
+        <output id="resultado-contar" class="result" aria-live="polite">El resultado aparecerá aquí.</output>
+      </section>
+    </div>
+
+    <section id="ajax" class="section-heading ajax-heading">
+      <div class="section-index">02</div>
+      <div><p class="overline">SEGUNDA PARTE</p><h2>Petición AJAX</h2><p>Consulto una dirección web y muestro la respuesta del servidor.</p></div>
+    </section>
+
+    <section class="ajax-card" aria-labelledby="titulo-ajax">
+      <div class="ajax-title-line"><div><h3 id="titulo-ajax">Consultar contenido de una URL</h3><p>El campo se completa automáticamente con la dirección de esta misma página.</p></div><span class="tag">AJAX · GET</span></div>
+      <form id="form-ajax" class="ajax-form">
+        <label for="url-ajax">Dirección web que deseo consultar</label>
+        <div class="url-row"><input id="url-ajax" type="url" required spellcheck="false" aria-describedby="ajax-help"><button id="boton-ajax" type="submit">Mostrar Contenidos</button></div>
+        <p id="ajax-help" class="help">Para comprobarlo sin restricciones, utiliza la URL de esta misma página. Algunas páginas externas no permiten consultas desde otros sitios.</p>
+      </form>
+      <div class="status-grid">
+        <div class="status-box"><h4>Estado de la petición</h4><output id="ajax-estado" aria-live="polite">No iniciada</output></div>
+        <div class="status-box"><h4>Código de estado</h4><output id="ajax-codigo" aria-live="polite">Sin respuesta todavía</output></div>
+      </div>
+      <div class="ajax-details">
+        <div><h4>Cabeceras HTTP de la respuesta del servidor</h4><pre id="ajax-cabeceras" class="pre-block">Todavía no hay cabeceras.</pre></div>
+        <div><h4>Contenidos</h4><pre id="ajax-contenido" class="pre-block content-block">Todavía no hay contenido.</pre></div>
+        <div><h4>Seguimiento de la petición</h4><pre id="ajax-historial" class="pre-block tracking-block">No iniciada</pre></div>
+      </div>
+    </section>
+
+    <section id="guia" class="guide">
+      <h2>¿Cómo probar la página?</h2>
+      <p>Para los ejercicios de JavaScript solo necesito escribir los datos. Para AJAX debo abrir esta página desde un servidor local o desde una dirección publicada, no directamente como archivo <code>file://</code>.</p>
+      <p>En mi equipo puedo ejecutar <code>python -m http.server 8000</code> dentro de la carpeta del proyecto y entrar a <code>http://localhost:8000/</code>.</p>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">Laboratorio 2 · Desarrollo de Aplicaciones en Red · JavaScript y AJAX</div></footer>
+</body>
+</html>
